@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PressureBLE" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#4361ee</item>
+        <item name="colorPrimaryVariant">#3a0ca3</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#4cc9f0</item>
+        <item name="colorSecondaryVariant">#4895ef</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+        <item name="android:statusBarColor">#1a1a2e</item>
+        <item name="android:navigationBarColor">#1a1a2e</item>
+    </style>
+</resources>
