@@ -203,8 +203,14 @@ class MainActivity : AppCompatActivity() {
                     
                     val descriptor = characteristic.getDescriptor(CCCD_UUID)
                     descriptor?.let {
-                        it.value = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
-                        gatt.writeDescriptor(it)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                            gatt.writeDescriptor(it, BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE)
+                        } else {
+                            @Suppress("DEPRECATION")
+                            it.value = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
+                            @Suppress("DEPRECATION")
+                            gatt.writeDescriptor(it)
+                        }
                     }
                     
                     handler.post {
@@ -218,8 +224,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
         
+        @Suppress("DEPRECATION")
         override fun onCharacteristicChanged(gatt: BluetoothGatt, characteristic: BluetoothGattCharacteristic) {
-            val data = characteristic.value
+            handleCharacteristicChanged(characteristic.value)
+        }
+        
+        override fun onCharacteristicChanged(gatt: BluetoothGatt, characteristic: BluetoothGattCharacteristic, value: ByteArray) {
+            handleCharacteristicChanged(value)
+        }
+        
+        private fun handleCharacteristicChanged(data: ByteArray?) {
             if (data != null && data.size >= 4) {
                 // Decode float (Little Endian)
                 val buffer = ByteBuffer.wrap(data).order(ByteOrder.LITTLE_ENDIAN)
