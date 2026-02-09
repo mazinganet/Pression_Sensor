@@ -26,13 +26,23 @@ jobs:
         
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
+
+    - name: Generate Gradle Wrapper
+      run: |
+        gradle wrapper --gradle-version 8.2
+        chmod +x gradlew
       
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-      
-    - name: Build Release APK
-      run: ./gradlew assembleRelease --stacktrace 2>&1 | tee build_output.txt
-      continue-on-error: true
+    - name: Build Debug APK
+      run: |
+        ./gradlew assembleDebug --stacktrace 2>&1 | tee build_output.txt
+        BUILD_EXIT=${PIPESTATUS[0]}
+        if [ $BUILD_EXIT -ne 0 ]; then
+          echo "::error::Build failed! Last 50 lines of output:"
+          tail -50 build_output.txt
+          echo "--- ERRORS ---"
+          grep -i "error" build_output.txt || true
+          exit $BUILD_EXIT
+        fi
       
     - name: Upload build log
       if: always()
@@ -47,5 +57,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pressure-ble-app
-        path: app/build/outputs/apk/release/app-release-unsigned.apk
+        path: app/build/outputs/apk/debug/app-debug.apk
         retention-days: 30
