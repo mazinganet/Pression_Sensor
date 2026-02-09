@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#4361EE"
+        android:pathData="M24,0C37.3,0 48,10.7 48,24C48,37.3 37.3,48 24,48C10.7,48 0,37.3 0,24C0,10.7 10.7,0 24,0Z"/>
+    
+    <!-- Inner circle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.2"
+        android:pathData="M24,4C35.0,4 44,13.0 44,24C44,35.0 35.0,44 24,44C13.0,44 4,35.0 4,24C4,13.0 13.0,4 24,4Z"/>
+    
+    <!-- Gauge arc -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M10,34 A18,18 0 0,1 38,34"/>
+    
+    <!-- Needle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M23,24L25,24L32,16L23,24Z"/>
+    
+    <!-- Center dot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,21C25.7,21 27,22.3 27,24C27,25.7 25.7,27 24,27C22.3,27 21,25.7 21,24C21,22.3 22.3,21 24,21Z"/>
+    
+    <!-- Tick marks -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M10,34L13,32 M24,8L24,12 M38,34L35,32"/>
+        
+    <!-- P letter for Pressure -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M20,36L20,40L22,40L22,38.5L23,38.5C24.4,38.5 25.5,37.4 25.5,36C25.5,34.6 24.4,33.5 23,33.5L20,33.5L20,36ZM22,37L22,35L23,35C23.6,35 24,35.4 24,36C24,36.6 23.6,37 23,37L22,37Z"/>
+</vector>

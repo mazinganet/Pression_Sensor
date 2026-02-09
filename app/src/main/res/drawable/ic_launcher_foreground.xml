@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Pressure gauge icon -->
+    <group android:translateX="27" android:translateY="27">
+        <!-- Outer circle -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M27,0C41.9,0 54,12.1 54,27C54,41.9 41.9,54 27,54C12.1,54 0,41.9 0,27C0,12.1 12.1,0 27,0Z"/>
+        
+        <!-- Inner circle -->
+        <path
+            android:fillColor="#4361EE"
+            android:pathData="M27,4C39.7,4 50,14.3 50,27C50,39.7 39.7,50 27,50C14.3,50 4,39.7 4,27C4,14.3 14.3,4 27,4Z"/>
+        
+        <!-- Gauge needle -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M27,27L27,12L29,12L29,27Z"
+            android:rotation="45"
+            android:pivotX="27"
+            android:pivotY="27"/>
+            
+        <!-- Center dot -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M27,24C28.7,24 30,25.3 30,27C30,28.7 28.7,30 27,30C25.3,30 24,28.7 24,27C24,25.3 25.3,24 27,24Z"/>
+        
+        <!-- Tick marks -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeWidth="1.5"
+            android:strokeColor="#FFFFFF"
+            android:pathData="M27,8L27,12 M8,27L12,27 M46,27L42,27"/>
+    </group>
+</vector>
