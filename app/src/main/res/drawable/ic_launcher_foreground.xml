@@ -5,36 +5,31 @@
     android:viewportWidth="108"
     android:viewportHeight="108">
     
-    <!-- Pressure gauge icon -->
+    <!-- Centered gauge icon for adaptive icon foreground -->
     <group android:translateX="27" android:translateY="27">
-        <!-- Outer circle -->
+        <!-- Base white circle -->
         <path
             android:fillColor="#FFFFFF"
-            android:pathData="M27,0C41.9,0 54,12.1 54,27C54,41.9 41.9,54 27,54C12.1,54 0,41.9 0,27C0,12.1 12.1,0 27,0Z"/>
+            android:pathData="M27,2C40.8,2 52,13.2 52,27C52,40.8 40.8,52 27,52C13.2,52 2,40.8 2,27C2,13.2 13.2,2 27,2Z"/>
         
-        <!-- Inner circle -->
+        <!-- Blue inner circle -->
         <path
             android:fillColor="#4361EE"
-            android:pathData="M27,4C39.7,4 50,14.3 50,27C50,39.7 39.7,50 27,50C14.3,50 4,39.7 4,27C4,14.3 14.3,4 27,4Z"/>
+            android:pathData="M27,6C38.6,6 48,15.4 48,27C48,38.6 38.6,48 27,48C15.4,48 6,38.6 6,27C6,15.4 15.4,6 27,6Z"/>
         
         <!-- Gauge needle -->
         <path
             android:fillColor="#FFFFFF"
-            android:pathData="M27,27L27,12L29,12L29,27Z"
-            android:rotation="45"
-            android:pivotX="27"
-            android:pivotY="27"/>
+            android:pathData="M27,27L35,19L33,17L27,27Z"/>
             
         <!-- Center dot -->
         <path
             android:fillColor="#FFFFFF"
-            android:pathData="M27,24C28.7,24 30,25.3 30,27C30,28.7 28.7,30 27,30C25.3,30 24,28.7 24,27C24,25.3 25.3,24 27,24Z"/>
+            android:pathData="M27,23A4,4 0,1,1 27,31A4,4 0,1,1 27,23Z"/>
         
-        <!-- Tick marks -->
+        <!-- P letter -->
         <path
             android:fillColor="#FFFFFF"
-            android:strokeWidth="1.5"
-            android:strokeColor="#FFFFFF"
-            android:pathData="M27,8L27,12 M8,27L12,27 M46,27L42,27"/>
+            android:pathData="M21,35L21,42L24,42L24,40L26,40A3,3 0,0,0 26,34L21,34L21,35ZM24,38L24,36L25,36A1,1 0,0,1 25,38L24,38Z"/>
     </group>
 </vector>
